@@ -1,0 +1,43 @@
+<div class="view-wrapper">
+  <nav class="nav-toggle two ">
+    <div style="padding-left:0px" class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="widescreen">
+            <a href="/">
+              <img src="../../../../images/block-logo.png" class="logo" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="page-wrapper container">
+    <div class="row">
+      <div style="padding-left:0;padding-right:0;max-width:16%;" class="left-menu-box col-xs-12 col-md-2">
+        <div class="left-menu">
+          <nav class="navbar navbar-inverse navbar-fixed-top sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+              <li class="sidebar-brand">
+                <a href="javascript:;">积木世界</a>
+              </li>
+              <li>
+                <router-link :to="{name:'createMod'}">
+                  创建模块
+                </router-link>
+              </li>
+              <li>
+                <router-link :to="{name:'modList'}">
+                  我的模块
+                </router-link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div style="padding-left:0;" class="page-content-box col-xs-12 col-md-10">
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+{
+  "name": "freedom-mod-cli",
+  "version": "1.0.0",
+  "description": "freedom-mod-cli是前端模块开发的脚手架，统一规范前端模块开发，并且为前端模块开发提供统一的开发环境，构建环境。此脚手架开发的模块可为可视化页面搭建系统提供页面组装模块",
+  "bin": {
+    "fm": "./bin/fmd.js"
+  },
+  "scripts": {
+    "dev": "node ./web/index.js -d",
+    "build": "node ./web/index.js -b"
+  },
+  "keywords": [
+    "freedom",
+    "freedom-mod-cli",
+    "freedom-cli",
+    "mod"
+  ],
+  "author": "liangjiecan",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^10.9.4",
+    "@types/vue": "^2.0.0",
+    "chalk": "^2.1.0",
+    "cnpm": "^5.1.1",
+    "co": "^4.6.0",
+    "co-fs": "^1.2.0",
+    "co-mkdirp": "^0.1.0",
+    "colors": "^1.3.2",
+    "commander": "^2.11.0",
+    "debug": "^3.1.0",
+    "decompress": "^4.2.0",
+    "decompress-targz": "^4.1.1",
+    "express": "^4.16.3",
+    "figlet": "^1.2.0",
+    "form-data": "^2.3.1",
+    "freedom-middleware-webpack2": "^1.0.6",
+    "fs-extra": "^4.0.3",
+    "globby": "^6.1.0",
+    "heibao-utils": "~0.0.1",
+    "iconv-lite": "^0.4.19",
+    "jszip": "^3.1.5",
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.0",
+    "koa-onerror": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.1.4",
+    "merge": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "node-fetch": "^1.7.3",
+    "reflect-metadata": "^0.1.12",
+    "shelljs": "^0.7.8",
+    "uuid": "^3.1.0",
+    "vue": "^2.5.17",
+    "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "cross-env": "^5.2.0",
+    "devtool": "^2.3.1"
+  }
+}

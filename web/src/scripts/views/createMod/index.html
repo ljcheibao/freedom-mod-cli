@@ -1,0 +1,35 @@
+<div class="create-wrapper">
+  <div class="form-group row col-md-10">
+    <label for="pageName" class="col-sm-2 col-form-label text-right">模块名称
+      <span style="color:red">*</span>
+    </label>
+
+    <div class="col-sm-6">
+      <input type="text" class="form-control" placeholder="请输入模块名称">
+    </div>
+  </div>
+  <!-- <div class="form-group row col-md-10">
+    <label for="pageType" class="col-sm-2 col-form-label text-right">页面类型
+      <span style="color:red">*</span>
+    </label>
+    <div class="col-sm-6">
+      <select class="form-control" id="pageType" v-model="pageModel.type">
+        <option value="-1">请选择页面类型</option>
+        <option value="1">频道</option>
+        <option value="2">区块</option>
+      </select>
+    </div>
+  </div> -->
+  <div class="form-group row col-md-10">
+    <label for="pageDesc" class="col-sm-2 col-form-label text-right">模块描述</label>
+    <div class="col-sm-6">
+      <textarea class="form-control" id="pageDesc" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="form-group row col-md-10">
+    <label class="col-sm-2 col-form-label text-right"></label>
+    <div class="col-sm-6">
+      <button @click="createModHandle" type="button" class="btn  btn-primary col-sm-4">创建</button>
+    </div>
+  </div>
+</div>
