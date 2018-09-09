@@ -1,7 +1,46 @@
 .modlist-wrapper {
-  margin-top: 70px;
+  margin-top: 80px;
   .navbar {
     justify-content:flex-end;
     padding-right: 10px;
+  }
+  .module-content {
+    width: 1060px;
+    height: 460px;
+    overflow-y: auto;
+    .module-list {
+      padding: 0 10px 0 10px;
+      margin-bottom: 0;
+      &::after {
+        display: block;
+        content: " ";
+        font-size: 0;
+        height: 0;
+        clear: both;
+        overflow: hidden;
+      }
+      .module-item {
+        position: relative;
+        list-style-type: none;
+        width: 200px;
+        height: 220px;
+        margin-bottom: 10px;
+        float: left;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        &:nth-child(5n) {
+          margin-right: 0px
+        }
+        .desc {
+          padding: 0 5px 0 5px;
+          font-size: 12px;
+          color: #666;
+          margin-top: 5px;
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 }

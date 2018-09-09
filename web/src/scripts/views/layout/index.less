@@ -314,10 +314,18 @@
   text-decoration: none;
 }
 
-.sidebar-nav li.open:hover before {
-  -webkit-transition: width 0.2s ease-in;
-  transition: width 0.2s ease-in;
-  width: 100%;
+// .sidebar-nav li.open:hover before {
+//   -webkit-transition: width 0.2s ease-in;
+//   transition: width 0.2s ease-in;
+//   width: 100%;
+// }
+
+.sidebar-nav li.open {
+  &::before {
+    -webkit-transition: width 0.2s ease-in;
+    transition: width 0.2s ease-in;
+    width: 100%;
+  }
 }
 
 .sidebar-nav .dropdown-menu {

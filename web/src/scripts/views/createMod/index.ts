@@ -21,7 +21,7 @@ export default class CreateMod extends BaseView {
    * 创建模块
    * @return {void} 无返回值
    */
-  async createModHandle(): void {
+  async createModHandle(): Promise<void> {
 
   }
 }

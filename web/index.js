@@ -4,11 +4,12 @@ const program = require('commander');
 const webpackBuild = require("freedom-middleware-webpack2");
 
 const params = {
+  root:path.resolve(__dirname,""),
   port: 3333,
   env: "dev",
   entryDir:"entry",
   publicPath: ``,
-  build: `build/bms/`,
+  build: path.resolve(__dirname,"../server/static/build"),
   proxy: {
     context: [
 

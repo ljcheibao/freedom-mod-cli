@@ -12,7 +12,7 @@
       </div>
     </div>
   </nav>
-  <div class="page-wrapper container">
+  <div class="freedom-wrapper container">
     <div class="row">
       <div style="padding-left:0;padding-right:0;max-width:16%;" class="left-menu-box col-xs-12 col-md-2">
         <div class="left-menu">
@@ -21,12 +21,12 @@
               <li class="sidebar-brand">
                 <a href="javascript:;">积木世界</a>
               </li>
-              <li>
+              <li :class="createModMenuChoosed ? 'open' : ''">
                 <router-link :to="{name:'createMod'}">
                   创建模块
                 </router-link>
               </li>
-              <li>
+              <li :class="modListMenuChoosed ? 'open' : ''">
                 <router-link :to="{name:'modList'}">
                   我的模块
                 </router-link>
