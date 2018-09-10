@@ -1,16 +1,16 @@
 #!/usr/bin/env node
-let app = require('koa')(),
+let Application = require('koa'),
   logger = require('koa-logger'),
   json = require('koa-json'),
   views = require('koa-views'),
   onerror = require('koa-onerror');
 var debug = require('debug')('freedom-mod-cli:server');
 var http = require('http');
-
+const app = new Application();
 
 let path = require('path');
 //路由注册
-let routes = require('./app/router.js');
+let routes = require('./router.js');
 // error handler
 onerror(app);
 //视图注册
@@ -23,9 +23,9 @@ app.use(views('./views', {
 app.use(require('koa-bodyparser')());
 app.use(json());
 app.use(logger());
-app.use(function* (next) {
+app.use(async function (next) {
   let start = new Date;
-  yield next;
+  await next;
   let ms = new Date - start;
   console.log('%s %s - %s', this.method, this.url, ms);
 });

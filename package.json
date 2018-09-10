@@ -6,8 +6,8 @@
     "fm": "./bin/fmd.js"
   },
   "scripts": {
-    "dev": "node ./web/index.js -d",
-    "build": "node ./web/index.js -b"
+    "dev": "node ./index.js -d",
+    "build": "node ./index.js -b"
   },
   "keywords": [
     "freedom",

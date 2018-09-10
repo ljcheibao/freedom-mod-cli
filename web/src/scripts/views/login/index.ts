@@ -18,4 +18,11 @@ import {
 })
 export default class Login extends BaseView {
 
+  /**
+   * 用户登录
+   * @return {void}无返回值
+   */
+  async loginHandle(): Promise<void> {
+
+  }
 }

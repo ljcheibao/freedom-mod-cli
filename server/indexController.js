@@ -9,8 +9,8 @@ class IndexController {
    * 首页
    * @return {string} 返回首页html字符串
    */
-  static *index() {
-
+  static async index(ctx,next) {
+    ctx.response.body = "<div style='color:red;font-size:50px'>我是server......</div>";
   }
 }
 module.exports = IndexController;

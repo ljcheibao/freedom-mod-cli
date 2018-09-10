@@ -11,7 +11,9 @@ commander.usage('<dev> to run module server......');
 commander.command("dev")
   .description('run local project command')
   .action(async function (cmd) {
-    //启动web服务
+    //构建web
+    //启动server服务
+    //mod模块的启动
   });
 commander.parse(process.argv);
 if (!commander.args.length) {
