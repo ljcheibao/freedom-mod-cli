@@ -7,6 +7,7 @@ let Application = require('koa'),
 var debug = require('debug')('freedom-mod-cli:server');
 var http = require('http');
 const app = new Application();
+var colors = require("colors");
 
 let path = require('path');
 //路由注册
@@ -23,9 +24,9 @@ app.use(views('./views', {
 app.use(require('koa-bodyparser')());
 app.use(json());
 app.use(logger());
-app.use(async function (next) {
+app.use(async function (ctx,next) {
   let start = new Date;
-  await next;
+  await next();
   let ms = new Date - start;
   console.log('%s %s - %s', this.method, this.url, ms);
 });
@@ -55,6 +56,7 @@ var server = http.createServer(app.callback());
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+console.log((`please access mod server http://localhost:${port}`).bold.green);
 
 /**
  * Normalize a port into a number, string, or false.
