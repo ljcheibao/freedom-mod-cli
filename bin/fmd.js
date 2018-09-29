@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 "use strict";
 const commander = require("commander");
 const chalk = require("chalk");
@@ -7,12 +7,15 @@ const colors = require("colors");
 
 commander.version(require("../package.json").version);
 commander.usage('<dev> to run module server......');
+const webUiStart = require("../web/index");
 
 commander.command("dev")
   .description('run local project command')
   .action(async function (cmd) {
     //构建web
+    await webUiStart("dev");
     //启动server服务
+    require("../server/server");
     //mod模块的启动
   });
 commander.parse(process.argv);
