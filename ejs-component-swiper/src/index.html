@@ -1,0 +1,20 @@
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <% 
+    var btnText = data.btnText;
+    var banners = data.banners;
+    for (var i = 0;i < banners.length;i++) {
+      var item = banners[i];%>
+      <div class="swiper-slide">
+        <img src="<%=item.banner%>" alt="">
+        <a href="javascript:;" class="btn-buy J_btn"><%=btnText%></a>
+      </div>
+     
+    <%}%>
+  </div>
+  <div class="swiper-pagination">
+    <%for(var i = 0, len = banners.length; i < len; i++) {%>
+      <a href="javascript:;" class="dot"></a>
+    <%}%>
+  </div>
+</div>

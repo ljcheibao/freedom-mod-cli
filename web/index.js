@@ -26,7 +26,7 @@ async function dev() {
 async function build() {
   params.env = "prod";
   //替换资源
-  params.publicPath = `http://www.51qututu.com/bms/`;
+  params.publicPath = ``;
   await webpackBuild(params);
 }
 

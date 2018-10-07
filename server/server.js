@@ -14,12 +14,14 @@ let path = require('path');
 let routes = require('./router.js');
 // error handler
 onerror(app);
+//指定静态资源的访问目录
+app.use(require('koa-static')(path.resolve(__dirname, "./static")));
 //视图注册
-let viewPath = path.join(__dirname, "./views");
 // global middlewares
-app.use(views('./views', {
-  root: viewPath,
-  default: 'html'
+app.use(views(__dirname + '/views', {
+  map: {
+    html: 'underscore'
+  }
 }));
 app.use(require('koa-bodyparser')());
 app.use(json());
@@ -30,8 +32,7 @@ app.use(async function (ctx,next) {
   let ms = new Date - start;
   console.log('%s %s - %s', this.method, this.url, ms);
 });
-//指定静态资源的访问目录
-app.use(require('koa-static')(path.resolve(__dirname, "./static")));
+
 
 // routes definition
 app.use(routes.routes(), routes.allowedMethods());

@@ -10,33 +10,50 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /(\.ts|\.tsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        use: [{
-          loader: 'ts-loader',
-          options: {
-            transpileOnly: true,
-          },
-        }]
-      },
-      {
-        test: /\.html$/,
-        use: {
-          loader: "html-loader",
-          options: {
-            minimize: false
-          }
+      test: /(\.ts|\.tsx)$/,
+      exclude: /(node_modules|bower_components)/,
+      use: [{
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true,
+        },
+      }]
+    },
+    {
+      test: /\.(jsx|js)$/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ["env"],
+          plugins: [
+            "transform-runtime",
+            "transform-remove-strict-mode",
+            "add-module-exports",
+            "typecheck",
+            "transform-decorators-legacy"
+          ]
         }
       },
-      {
-        test: /\.less$/,
-        use: ["style-loader", "css-loader", "less-loader"]
+      exclude: /node_modules/
+    },
+    {
+      test: /\.html$/,
+      use: {
+        loader: "html-loader",
+        options: {
+          minimize: false
+        }
       }
+    },
+    {
+      test: /\.less$/,
+      use: ["style-loader", "css-loader", "less-loader"]
+    }
     ]
   },
   resolve: {
     alias: { //需要设置哪些库的别名
-      
+
     },
     modules: [
       baseDir + "/node_modules"

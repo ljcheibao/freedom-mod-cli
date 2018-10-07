@@ -1,0 +1,14 @@
+{
+	"btnText": "购买",
+	"banners": [
+		{
+			"banner": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521881083275&di=92c9157902df64e54d1f5eb73359321f&imgtype=0&src=http%3A%2F%2Ffucome.cn%2FContent%2FUploadFiles%2F00%2F00%2F00%2F41.jpg"
+		},
+		{
+			"banner": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521883963316&di=5411543ef4fbbdc4989e5b3519b7624c&imgtype=0&src=http%3A%2F%2Fa.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4bed2e738bd4b31cdfae124980d6277f9f2ff8b6.jpg"
+		},
+		{
+			"banner": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521884005991&di=97ff86bd27990b73229958bc3fb737ce&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0159aa592ad8e5a801216a3e54aa95.jpg"
+		}
+	]
+}

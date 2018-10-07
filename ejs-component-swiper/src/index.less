@@ -1,0 +1,41 @@
+@import '../node_modules/swiper/dist/css/swiper.css';
+.swiper-container {
+  width: 100%;
+  img {
+    width: 100%;
+    height: 200px;
+    vertical-align: middle;
+  }
+  .swiper-pagination {
+    width: 100%;
+    bottom: 3%;
+    text-align: center;
+    .swiper-pagination-bullet {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      opacity: inherit;
+    }
+    .swiper-pagination-bullet-active {
+      background: #fff;
+    }
+  }
+  .btn-buy {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 123, 255, .75);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -25px;
+    z-index: 9999;
+    border-radius: 25px;
+  }
+}

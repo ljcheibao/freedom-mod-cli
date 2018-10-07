@@ -1,0 +1,36 @@
+{
+	"title": "网站banner轮播",
+	"type": "object",
+	"properties": {
+		"btnText": {
+			"type": "string",
+			"title": "轮播图上的按钮文案"
+		},
+		"banners": {
+			"title": "轮播列表信息设置",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"banner": {
+						"type": "string",
+						"title": "轮播图url"
+					},
+					"name": {
+						"title": "姓名列表设置",
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"firstname": {
+									"title": "第一姓名",
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

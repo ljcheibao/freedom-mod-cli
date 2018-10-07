@@ -4,7 +4,10 @@ var baseDir = process.cwd();
 module.exports = function () {
   var extendConf = {
     plugins: [
-
+      new webpack.ProvidePlugin({
+        axios: "axios",
+        "window.axios": "axios"
+      }),
     ],
     resolve: {
       alias: {

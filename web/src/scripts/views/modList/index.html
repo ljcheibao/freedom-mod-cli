@@ -1,201 +1,23 @@
 <div class="modlist-wrapper">
   <div class="module-content">
     <ul class="module-list">
-      <li class="module-item">
+      <li class="module-item" v-for="item in modList">
         <div class="module-info">
-          <img width="200px" height="90px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521205362817&di=4544f0ead745e6a9dbae760bc17c65a2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D0d604f7ada160924c828aa58bc6e5f8f%2Faa18972bd40735fa5d50669594510fb30f24087d.jpg"
-            alt="">
-          <p class="desc">名称：ejs-module-product</p>
-          <p class="desc">版本：0.0.1</p>
-          <p class="desc">描述：产品模块</p>
-          <p class="desc">修改者：heibao</p>
-          <p class="desc">修改时间：2018-09-10</p>
+          <img width="200px" height="90px" :src="item.thumbnail" alt="">
+          <p class="desc">名称：{{item.name}}</p>
+          <p class="desc">版本：{{item.version}}</p>
+          <p class="desc">描述：{{item.description}}</p>
+          <p class="desc">修改者：{{item.editor}}</p>
+          <p class="desc">修改时间：{{item.editTime}}</p>
         </div>
         <div class="operation-container">
           <a href="javascript:;">更新</a>
-          <a href="javascript:;" class="preview">预览</a>
+          <a href="javascript:;" class="preview" @click="previewModEffect(item.name,item.version)">预览</a>
           <a href="javascript:;" class="publish">发布</a>
         </div>
       </li>
-      <li class="module-item">
-        <div class="module-info">
-          <img width="200px" height="90px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521205362817&di=4544f0ead745e6a9dbae760bc17c65a2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D0d604f7ada160924c828aa58bc6e5f8f%2Faa18972bd40735fa5d50669594510fb30f24087d.jpg"
-            alt="">
-          <p class="desc">名称：ejs-module-product</p>
-          <p class="desc">版本：0.0.1</p>
-          <p class="desc">描述：产品模块</p>
-          <p class="desc">修改者：heibao</p>
-          <p class="desc">修改时间：2018-09-10</p>
-        </div>
-        <div class="operation-container">
-          <a href="javascript:;">更新</a>
-          <a href="javascript:;" class="preview">预览</a>
-          <a href="javascript:;" class="publish">发布</a>
-        </div>
-      </li>
-      <li class="module-item">
-        <div class="module-info">
-          <img width="200px" height="90px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521205362817&di=4544f0ead745e6a9dbae760bc17c65a2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D0d604f7ada160924c828aa58bc6e5f8f%2Faa18972bd40735fa5d50669594510fb30f24087d.jpg"
-            alt="">
-          <p class="desc">名称：ejs-module-product</p>
-          <p class="desc">版本：0.0.1</p>
-          <p class="desc">描述：产品模块</p>
-          <p class="desc">修改者：heibao</p>
-          <p class="desc">修改时间：2018-09-10</p>
-        </div>
-        <div class="operation-container">
-          <a href="javascript:;">更新</a>
-          <a href="javascript:;" class="preview">预览</a>
-          <a href="javascript:;" class="publish">发布</a>
-        </div>
-      </li>
-      <li class="module-item">
-        <div class="module-info">
-          <img width="200px" height="90px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521205362817&di=4544f0ead745e6a9dbae760bc17c65a2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D0d604f7ada160924c828aa58bc6e5f8f%2Faa18972bd40735fa5d50669594510fb30f24087d.jpg"
-            alt="">
-          <p class="desc">名称：ejs-module-product</p>
-          <p class="desc">版本：0.0.1</p>
-          <p class="desc">描述：产品模块</p>
-          <p class="desc">修改者：heibao</p>
-          <p class="desc">修改时间：2018-09-10</p>
-        </div>
-        <div class="operation-container">
-          <a href="javascript:;">更新</a>
-          <a href="javascript:;" class="preview">预览</a>
-          <a href="javascript:;" class="publish">发布</a>
-        </div>
-      </li>
-      <li class="module-item">
-        <div class="module-info">
-          <img width="200px" height="90px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521205362817&di=4544f0ead745e6a9dbae760bc17c65a2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D0d604f7ada160924c828aa58bc6e5f8f%2Faa18972bd40735fa5d50669594510fb30f24087d.jpg"
-            alt="">
-          <p class="desc">名称：ejs-module-product</p>
-          <p class="desc">版本：0.0.1</p>
-          <p class="desc">描述：产品模块</p>
-          <p class="desc">修改者：heibao</p>
-          <p class="desc">修改时间：2018-09-10</p>
-        </div>
-        <div class="operation-container">
-          <a href="javascript:;">更新</a>
-          <a href="javascript:;" class="preview">预览</a>
-          <a href="javascript:;" class="publish">发布</a>
-        </div>
-      </li>
-      <li class="module-item">
-        <div class="module-info">
-          <img width="200px" height="90px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521205362817&di=4544f0ead745e6a9dbae760bc17c65a2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D0d604f7ada160924c828aa58bc6e5f8f%2Faa18972bd40735fa5d50669594510fb30f24087d.jpg"
-            alt="">
-          <p class="desc">名称：ejs-module-product</p>
-          <p class="desc">版本：0.0.1</p>
-          <p class="desc">描述：产品模块</p>
-          <p class="desc">修改者：heibao</p>
-          <p class="desc">修改时间：2018-09-10</p>
-        </div>
-        <div class="operation-container">
-          <a href="javascript:;">更新</a>
-          <a href="javascript:;" class="preview">预览</a>
-          <a href="javascript:;" class="publish">发布</a>
-        </div>
-      </li>
-      <li class="module-item">
-        <div class="module-info">
-          <img width="200px" height="90px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521205362817&di=4544f0ead745e6a9dbae760bc17c65a2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D0d604f7ada160924c828aa58bc6e5f8f%2Faa18972bd40735fa5d50669594510fb30f24087d.jpg"
-            alt="">
-          <p class="desc">名称：ejs-module-product</p>
-          <p class="desc">版本：0.0.1</p>
-          <p class="desc">描述：产品模块</p>
-          <p class="desc">修改者：heibao</p>
-          <p class="desc">修改时间：2018-09-10</p>
-        </div>
-        <div class="operation-container">
-          <a href="javascript:;">更新</a>
-          <a href="javascript:;" class="preview">预览</a>
-          <a href="javascript:;" class="publish">发布</a>
-        </div>
-      </li>
-      <li class="module-item">
-        <div class="module-info">
-          <img width="200px" height="90px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521205362817&di=4544f0ead745e6a9dbae760bc17c65a2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D0d604f7ada160924c828aa58bc6e5f8f%2Faa18972bd40735fa5d50669594510fb30f24087d.jpg"
-            alt="">
-          <p class="desc">名称：ejs-module-product</p>
-          <p class="desc">版本：0.0.1</p>
-          <p class="desc">描述：产品模块</p>
-          <p class="desc">修改者：heibao</p>
-          <p class="desc">修改时间：2018-09-10</p>
-        </div>
-        <div class="operation-container">
-          <a href="javascript:;">更新</a>
-          <a href="javascript:;" class="preview">预览</a>
-          <a href="javascript:;" class="publish">发布</a>
-        </div>
-      </li>
-      <li class="module-item">
-        <div class="module-info">
-          <img width="200px" height="90px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521205362817&di=4544f0ead745e6a9dbae760bc17c65a2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D0d604f7ada160924c828aa58bc6e5f8f%2Faa18972bd40735fa5d50669594510fb30f24087d.jpg"
-            alt="">
-          <p class="desc">名称：ejs-module-product</p>
-          <p class="desc">版本：0.0.1</p>
-          <p class="desc">描述：产品模块</p>
-          <p class="desc">修改者：heibao</p>
-          <p class="desc">修改时间：2018-09-10</p>
-        </div>
-        <div class="operation-container">
-          <a href="javascript:;">更新</a>
-          <a href="javascript:;" class="preview">预览</a>
-          <a href="javascript:;" class="publish">发布</a>
-        </div>
-      </li>
-      <li class="module-item">
-        <div class="module-info">
-          <img width="200px" height="90px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521205362817&di=4544f0ead745e6a9dbae760bc17c65a2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D0d604f7ada160924c828aa58bc6e5f8f%2Faa18972bd40735fa5d50669594510fb30f24087d.jpg"
-            alt="">
-          <p class="desc">名称：ejs-module-product</p>
-          <p class="desc">版本：0.0.1</p>
-          <p class="desc">描述：产品模块</p>
-          <p class="desc">修改者：heibao</p>
-          <p class="desc">修改时间：2018-09-10</p>
-        </div>
-        <div class="operation-container">
-          <a href="javascript:;">更新</a>
-          <a href="javascript:;" class="preview">预览</a>
-          <a href="javascript:;" class="publish">发布</a>
-        </div>
-      </li>
-      <li class="module-item">
-        <div class="module-info">
-          <img width="200px" height="90px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521205362817&di=4544f0ead745e6a9dbae760bc17c65a2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D0d604f7ada160924c828aa58bc6e5f8f%2Faa18972bd40735fa5d50669594510fb30f24087d.jpg"
-            alt="">
-          <p class="desc">名称：ejs-module-product</p>
-          <p class="desc">版本：0.0.1</p>
-          <p class="desc">描述：产品模块</p>
-          <p class="desc">修改者：heibao</p>
-          <p class="desc">修改时间：2018-09-10</p>
-        </div>
-        <div class="operation-container">
-          <a href="javascript:;">更新</a>
-          <a href="javascript:;" class="preview">预览</a>
-          <a href="javascript:;" class="publish">发布</a>
-        </div>
-      </li>
-      <li class="module-item">
-        <div class="module-info">
-          <img width="200px" height="90px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521205362817&di=4544f0ead745e6a9dbae760bc17c65a2&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D0d604f7ada160924c828aa58bc6e5f8f%2Faa18972bd40735fa5d50669594510fb30f24087d.jpg"
-            alt="">
-          <p class="desc">名称：ejs-module-product</p>
-          <p class="desc">版本：0.0.1</p>
-          <p class="desc">描述：产品模块</p>
-          <p class="desc">修改者：heibao</p>
-          <p class="desc">修改时间：2018-09-10</p>
-        </div>
-        <div class="operation-container">
-          <a href="javascript:;">更新</a>
-          <a href="javascript:;" class="preview">预览</a>
-          <a href="javascript:;" class="publish">发布</a>
-        </div>
-      </li>
-      <pagination :pagination="pagination" @choosePaginationEvent="choosePaginationHandle" @choosePrevOrNextEvent="choosePaginationHandle">
-      </pagination>
     </ul>
-    
+    <pagination :pagination="pagination" @choosePaginationEvent="choosePaginationHandle" @choosePrevOrNextEvent="choosePaginationHandle">
+    </pagination>
   </div>
 </div>
