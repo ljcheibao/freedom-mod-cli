@@ -2,6 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 const baseDir = process.cwd();
+const ModHandle = require("../mod/index");
 
 let modList = {};
 let modJsonfiles = [];
@@ -47,7 +48,12 @@ class IndexController {
    * @return {string} 返回渲染后的模块html字符串
    */
   static async preview(ctx, next) {
-
+    //进行webpack编译，输出模块预览效果
+    const query = ctx.query;
+    ctx.body = await ModHandle({
+      modName: query.modname,
+      version: query.version
+    });
   }
 
 

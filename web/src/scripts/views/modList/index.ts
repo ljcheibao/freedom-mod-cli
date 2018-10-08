@@ -53,14 +53,4 @@ export default class ModList extends BaseView {
   async choosePaginationHandle(pageIndex: number): Promise<void> {
 
   }
-
-  /**
-   * 预览模块
-   * @param modName 模块名称
-   * @param version 模块版本
-   * @return {void} 无返回值
-   */
-  previewModEffect(modName: string, version: string): void {
-
-  }
 }

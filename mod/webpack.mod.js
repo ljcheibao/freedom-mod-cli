@@ -1,11 +1,9 @@
 const baseDir = process.cwd();
 const path = require("path");
-module.exports = {
-  entry: {
-    "index": `${baseDir}/index.js`
-  },
+let webpackConf = {
+  entry: {},
   output: {
-    path: `${baseDir}/build`,
+    path: path.resolve(__dirname, "../build"),
     filename: "[name].js"
   },
   module: {
@@ -48,16 +46,12 @@ module.exports = {
     {
       test: /\.less$/,
       use: ["style-loader", "css-loader", "less-loader"]
-    }
-    ]
+    }]
   },
   resolve: {
     alias: { //需要设置哪些库的别名
 
     },
-    modules: [
-      baseDir + "/node_modules"
-    ],
     extensions: [ //开启后缀名的自动补全
       '.tsx',
       '.ts',
@@ -80,4 +74,12 @@ module.exports = {
       amd: 'vue'
     }
   }
-}
+};
+module.exports = async function (params) {
+  let entry = {
+    "index": path.join(`${baseDir}/${params.modName}`, '/src/index.js')
+  };
+  webpackConf.entry = entry;
+  //webpackConf.resolve.modules.push(path.join(`${baseDir}/${params.modName}`,'/node_modules'));
+  return webpackConf;
+};
