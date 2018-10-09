@@ -51,11 +51,11 @@ module.exports = async function (params) {
 };
 
 let webpackBuild = function (webpackConf) {
-  console.log(JSON.stringify(webpackConf,null,2));
   return new Promise(function (resolve, reject) {
     let compiler = webpack(webpackConf, (err, stats) => {
       if (err || stats.hasErrors()) {
         // Handle errors here
+        console.log(stats);
       }
       resolve(true);
     });

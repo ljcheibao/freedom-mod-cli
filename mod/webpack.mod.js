@@ -22,13 +22,16 @@ let webpackConf = {
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ["env"],
+          presets: [
+            path.resolve(__dirname, "../node_modules/babel-preset-es2015"),
+            path.resolve(__dirname, "../node_modules/babel-preset-stage-0")
+          ],
           plugins: [
-            "transform-runtime",
-            "transform-remove-strict-mode",
-            "add-module-exports",
-            "typecheck",
-            "transform-decorators-legacy"
+            path.resolve(__dirname, "../node_modules/babel-plugin-transform-runtime"),
+            path.resolve(__dirname, "../node_modules/babel-plugin-transform-remove-strict-mode"),
+            path.resolve(__dirname, "../node_modules/babel-plugin-add-module-exports"),
+            path.resolve(__dirname, "../node_modules/babel-plugin-typecheck"),
+            path.resolve(__dirname, "../node_modules/babel-plugin-transform-decorators-legacy")
           ]
         }
       },
@@ -48,10 +51,20 @@ let webpackConf = {
       use: ["style-loader", "css-loader", "less-loader"]
     }]
   },
+  resolveLoader: {
+    modules: [
+      path.resolve(__dirname, '../', 'node_modules'),
+      "node_modules"
+    ]
+  },
   resolve: {
     alias: { //需要设置哪些库的别名
 
     },
+    modules: [
+      path.resolve(__dirname, '../', 'node_modules'),
+      "node_modules"
+    ],
     extensions: [ //开启后缀名的自动补全
       '.tsx',
       '.ts',
@@ -76,10 +89,11 @@ let webpackConf = {
   }
 };
 module.exports = async function (params) {
+  console.log("this is ========== " + __dirname);
   let entry = {
     "index": path.join(`${baseDir}/${params.modName}`, '/src/index.js')
   };
   webpackConf.entry = entry;
-  //webpackConf.resolve.modules.push(path.join(`${baseDir}/${params.modName}`,'/node_modules'));
+  webpackConf.resolve.modules.push(path.join(`${baseDir}/${params.modName}`, '/node_modules'));
   return webpackConf;
 };
