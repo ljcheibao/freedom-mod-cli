@@ -1,3 +1,8 @@
+const webpack = require("webpack");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const autoprefixer = require('autoprefixer');
 const baseDir = process.cwd();
 const path = require("path");
 let webpackConf = {
@@ -6,6 +11,13 @@ let webpackConf = {
     path: path.resolve(__dirname, "../build"),
     filename: "[name].js"
   },
+  plugins:[
+    new CleanWebpackPlugin(["build"], {
+      root: path.resolve(__dirname,"../build"), //根目录
+      verbose: true, //开启在控制台输出信息
+      dry: false //启用删除文件
+    })
+  ],
   module: {
     rules: [{
       test: /(\.ts|\.tsx)$/,
@@ -80,7 +92,6 @@ let webpackConf = {
   }
 };
 module.exports = async function (params) {
-  console.log("this is ========== " + __dirname);
   let entry = {
     "index": path.join(`${baseDir}/${params.modName}`, '/src/index.js')
   };

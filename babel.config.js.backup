@@ -1,0 +1,21 @@
+const path = require("path");
+module.exports = function () {
+	const presets = ["env"];
+	const plugins = [
+		[
+			"transform-runtime",
+			"transform-remove-strict-mode",
+			"add-module-exports",
+			"typecheck",
+			"transform-decorators-legacy",
+			{
+				cwd:path.resolve(__dirname,"./node_modules")
+			}
+		]
+	];
+
+	return {
+		presets,
+		plugins
+	};
+}

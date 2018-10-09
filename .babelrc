@@ -1,10 +1,14 @@
 {
-  "presets": ["env"],
+  "presets": [
+    "env"
+  ],
   "plugins": [
-    "transform-runtime",
-    "transform-remove-strict-mode",
-    "add-module-exports",
-    "typecheck",
-    "transform-decorators-legacy"
+    [
+      "transform-runtime",
+      "transform-remove-strict-mode",
+      "add-module-exports",
+      "typecheck",
+      "transform-decorators-legacy"
+    ]
   ]
 }
