@@ -22,17 +22,8 @@ let webpackConf = {
       use: {
         loader: 'babel-loader',
         options: {
-          presets: [
-            path.resolve(__dirname, "../node_modules/babel-preset-es2015"),
-            path.resolve(__dirname, "../node_modules/babel-preset-stage-0")
-          ],
-          plugins: [
-            path.resolve(__dirname, "../node_modules/babel-plugin-transform-runtime"),
-            path.resolve(__dirname, "../node_modules/babel-plugin-transform-remove-strict-mode"),
-            path.resolve(__dirname, "../node_modules/babel-plugin-add-module-exports"),
-            path.resolve(__dirname, "../node_modules/babel-plugin-typecheck"),
-            path.resolve(__dirname, "../node_modules/babel-plugin-transform-decorators-legacy")
-          ]
+          babelrc: false,
+          extends: path.resolve(__dirname, "../.babelrc")
         }
       },
       exclude: /node_modules/
