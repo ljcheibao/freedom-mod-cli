@@ -9,11 +9,28 @@ var http = require('http');
 const app = new Application();
 var colors = require("colors");
 
+let liveload = require('koa-liveload');
+
 let path = require('path');
 //路由注册
 let routes = require('./router.js');
 // error handler
 onerror(app);
+
+app.use(liveload(process.cwd(), {
+  includes: [
+    "less",
+    "scss",
+    "sass",
+    "jade",
+    "ejs",
+    "vue",
+    "ts",
+    "jsx",
+    "tsx"
+  ]
+}));
+
 //指定静态资源的访问目录
 app.use(require('koa-static')(path.resolve(__dirname, "./static")));
 //视图注册
@@ -26,7 +43,7 @@ app.use(views(__dirname + '/views', {
 app.use(require('koa-bodyparser')());
 app.use(json());
 app.use(logger());
-app.use(async function (ctx,next) {
+app.use(async function (ctx, next) {
   let start = new Date;
   await next();
   let ms = new Date - start;

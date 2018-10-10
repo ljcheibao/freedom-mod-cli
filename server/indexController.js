@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const baseDir = process.cwd();
 const ModHandle = require("../mod/index");
+const StoreManager = require("../common/store");
 
 let modList = {};
 let modJsonfiles = [];
@@ -48,12 +49,16 @@ class IndexController {
    * @return {string} 返回渲染后的模块html字符串
    */
   static async preview(ctx, next) {
+    StoreManager.set("url", ctx.url);
     //进行webpack编译，输出模块预览效果
     const query = ctx.query;
-    ctx.body = await ModHandle({
+    const modHtml = await ModHandle({
       modName: query.modname,
       version: query.version
     });
+    let tplStr = fs.readFileSync(`${path.resolve(__dirname, "./views/preview.html")}`).toString();
+    tplStr = tplStr.replace(/<body>/gi, `<body>${modHtml}`);
+    ctx.body = tplStr
   }
 
 
