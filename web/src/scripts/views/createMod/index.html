@@ -5,7 +5,7 @@
     </label>
 
     <div class="col-sm-6">
-      <input type="text" class="form-control" placeholder="请输入模块名称">
+      <input type="text" v-model="moduleData.modName" class="form-control" placeholder="请输入模块名称">
     </div>
   </div>
   <div class="form-group row col-md-10">
@@ -14,19 +14,19 @@
     </label>
     <div class="col-sm-6">
       <span class="label module-type">
-        <input type="radio" /> vue
+        <input type="radio" v-model="moduleData.type" value="vue"/> vue
       </span>
       <span class="label module-type">
-        <input type="radio" /> react
+        <input type="radio" v-model="moduleData.type" value="ejs"/> ejs
       </span>
       <span class="label module-type">
-        <input type="radio" /> ejs
+        <input type="radio" v-model="moduleData.type" value="jade"/> jade
       </span>
       <span class="label module-type">
-        <input type="radio" /> jade
+        <input type="radio" v-model="moduleData.type" value="xtpl"/> xtpl
       </span>
       <span class="label module-type">
-        <input type="radio" /> xtpl
+        <input type="radio" v-model="moduleData.type" value="react"/> react
       </span>
     </div>
   </div>
@@ -35,7 +35,7 @@
       <span style="color:red">*</span>
     </label>
     <div class="col-sm-6">
-      <textarea class="form-control" id="pageDesc" rows="3"></textarea>
+      <textarea v-model="moduleData.description" class="form-control" id="pageDesc" rows="3"></textarea>
     </div>
   </div>
   <div class="form-group row col-md-10">

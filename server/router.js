@@ -14,4 +14,6 @@ router.get('/mod/preview', indexController.preview);
 //获取本地模块列表
 router.get('/api/modlist', indexController.modList);
 
+router.post('/api/createmod', indexController.createModule)
+
 module.exports = router;

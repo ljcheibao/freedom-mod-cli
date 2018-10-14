@@ -1,12 +1,13 @@
 import "./index.less";
 import {
   BaseView,
-  Component,
-  Vue,
-  Emit,
-  Watch,
-  Prop
+  Component
 } from "../BaseView";
+
+import { ModuleDetailModel } from "../../models/ModuleDetailModel";
+import ModService from "../../services/ModService";
+
+const modServiceInstance = new ModService();
 
 /**
  * 系统通用layout
@@ -28,27 +29,7 @@ export default class CreateMod extends BaseView {
    * @return {void} 无返回值
    */
   async createModHandle(): Promise<void> {
-
+    let result:boolean = <boolean>await modServiceInstance.createMod(this.moduleData);
+    if (result) this.$router.push(`/modlist`);
   }
-}
-
-/**
- * 模块详情实体
- * @class
- */
-class ModuleDetailModel {
-  /**
-   * 模块名称
-   */
-  modName: string;
-
-  /**
-   * 模块类型 ejs、vue、react、jade、xtpl
-   */
-  type: string;
-
-  /**
-   * 模块描述
-   */
-  description: string;
 }

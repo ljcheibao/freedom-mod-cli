@@ -61,7 +61,6 @@ class IndexController {
     ctx.body = tplStr
   }
 
-
   /**
    * 获取模块列表
    * @param {Context} ctx 上下文 
@@ -73,6 +72,16 @@ class IndexController {
       total: modList.length,
       list: modList
     };
+  }
+
+  /**
+   * 创建模块
+   * @param {Context} ctx 上下文 
+   * @param {Function} next 下一步操作中间件 await next()
+   * @return {boolean} 创建成功返回true，创建失败返回false
+   */
+  static async createModule(ctx, next) {
+
   }
 
 }

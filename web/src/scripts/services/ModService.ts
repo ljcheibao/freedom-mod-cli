@@ -1,3 +1,6 @@
+import { ModuleDetailModel } from "../models/ModuleDetailModel";
+import axios from "axios";
+
 
 /**
  * 模块相关服务，提供以下能力
@@ -20,6 +23,25 @@ export default class ModService {
 					pageIndex: pageIndex,
 					pageSize: pageSize
 				}
+			}).then(function (result) {
+				resolve(result.data);
+			}).catch(function (error) {
+				reject(error);
+			});
+		});
+	}
+
+	/**
+	 * 创建模块
+	 * @param {ModuleDetailModel} data 模块信息
+	 * @return {boolean} 创建成功返回true，创建失败返回false
+	 */
+	createMod(data:ModuleDetailModel) {
+		return new Promise((resolve, reject) => {
+			axios.request({
+				url: `/api/createmod`,
+				method: "Post",
+				data: data
 			}).then(function (result) {
 				resolve(result.data);
 			}).catch(function (error) {

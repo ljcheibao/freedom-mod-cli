@@ -18,6 +18,7 @@
   "author": "liangjiecan",
   "license": "ISC",
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node": "^10.9.4",
     "@types/vue": "^2.0.0",
     "axios": "^0.18.0",

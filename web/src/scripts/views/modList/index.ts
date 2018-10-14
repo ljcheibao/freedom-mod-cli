@@ -5,7 +5,7 @@ import {
 } from "../BaseView";
 
 import pagination from "../../components/vue-component-pagination/index";
-import ModService from "../../services/modService";
+import ModService from "../../services/ModService";
 
 const modServiceInstance = new ModService();
 
@@ -51,6 +51,6 @@ export default class ModList extends BaseView {
    * @return {void} 无返回值
    */
   async choosePaginationHandle(pageIndex: number): Promise<void> {
-
+    console.log();
   }
 }
