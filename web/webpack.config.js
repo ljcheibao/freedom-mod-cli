@@ -1,4 +1,5 @@
 var webpack = require("webpack");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require("path");
 var baseDir = process.cwd();
 module.exports = function () {
@@ -8,6 +9,10 @@ module.exports = function () {
         axios: "axios",
         "window.axios": "axios"
       }),
+      new CopyWebpackPlugin([{
+        from: path.resolve(__dirname, "./images/block-logo.png"),
+        to: path.resolve(__dirname, "../server/static/build/images")
+      }])
     ],
     resolve: {
       alias: {
