@@ -1,11 +1,12 @@
-"use strict";
 const fs = require("fs");
 const path = require("path");
 const baseDir = process.cwd();
 const ModHandle = require("../mod/index");
 const StoreManager = require("../common/store");
 
-let modList = {};
+const generateTpl = require("../libs/generateTpl");
+
+let modList = [];
 let modJsonfiles = [];
 
 let getAllModJsonfile = function (path) {
@@ -81,7 +82,15 @@ class IndexController {
    * @return {boolean} 创建成功返回true，创建失败返回false
    */
   static async createModule(ctx, next) {
-
+    let modData = ctx.request.body;
+    let result = await generateTpl.generateModuleTpl(modData);
+    if (result) {
+      let fileObject = fs.readFileSync(`${baseDir}/${modData.modName}/freedom.json`);
+      modList.push(JSON.parse(fileObject));
+    }
+    ctx.body = {
+      success: true
+    }
   }
 
 }
