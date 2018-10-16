@@ -5,6 +5,7 @@ const chalk = require("chalk");
 const figlet = require("figlet");
 const colors = require("colors");
 const login = require("../libs/login");
+const clean = require("../libs/clean");
 
 commander.version(require("../package.json").version);
 commander.usage('<clean、dev> to run module server......');
@@ -12,7 +13,7 @@ const webUiStart = require("../web/index");
 commander.command("clean")
   .description("clear freedom local cache")
   .action(async function (cmd) {
-
+    await clean.cleanCache();
   });
 commander.command("dev")
   .description('module develop command')
