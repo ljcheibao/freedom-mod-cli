@@ -1,0 +1,6 @@
+ejs:
+  tplName: ejs-mod-template
+  description: ejs模块模板
+vue:
+  tplName: vue-mod-template
+  description: vue模块模板
