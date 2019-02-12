@@ -4,7 +4,7 @@ let Application = require('koa'),
   json = require('koa-json'),
   views = require('koa-views'),
   onerror = require('koa-onerror');
-var debug = require('debug')('freedom-mod-cli:server');
+//var debug = require('debug')('freedom-mod-cli:server');
 var http = require('http');
 const app = new Application();
 var colors = require("colors");
@@ -133,5 +133,5 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  //debug('Listening on ' + bind);
 }

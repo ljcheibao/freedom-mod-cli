@@ -53,10 +53,18 @@ class IndexController {
     StoreManager.set("url", ctx.url);
     //进行webpack编译，输出模块预览效果
     const query = ctx.query;
-    const modHtml = await ModHandle({
+    let modHtml = await ModHandle({
       modName: query.modname,
       version: query.version
     });
+    //注入模块的数据
+    let data = fs.readFileSync(`${baseDir}/${query.modname}/mock/data.json`).toString();
+    modHtml = `
+      <div class="freedom-module-wrapper ${query.modname}">
+        <textarea class="schema-data-${query.modname}" style="display:none;">${data}</textarea>
+        ${modHtml}
+      </div>
+    `;
     let tplStr = fs.readFileSync(`${path.resolve(__dirname, "./views/preview.html")}`).toString();
     tplStr = tplStr.replace(/<body>/gi, `<body>${modHtml}`);
     ctx.body = tplStr

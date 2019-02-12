@@ -42,3 +42,9 @@ module.exports = async function (env) {
       break;
   }
 }
+//cdn.51talk.com/apollo/smart_crm/${version}/js/mainfest.js
+
+//cdn.51talk.com/apollo/smart_crm/${version}/js/common.js
+
+//cdn.51talk.com/apollo/smart_crm/${version}/css/mainfest.css
+//cdn.51talk.com/apollo/smart_crm/${version}/css/common.css

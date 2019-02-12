@@ -24,6 +24,7 @@ class GenerateTpl {
    * 生成模块的工程模板
    * @param {object} moduleModel 模块实体信息 
    * {
+   *  device:"终端列席，比如mobile，pc",
    *  type:"模块类型，比如ejs、vue",
    *  description:"模块描述",
    *  modName:"模块名称"
@@ -61,28 +62,46 @@ class GenerateTpl {
     freedomJson.author = pkg.author;//创建者,这里是登录github/gitlab账号的用户
     freedomJson.editor = "上善若水";//这里是登录github/gitlab账号的用户
     freedomJson.editTime = util.dateFormat("yyyy-MM-dd hh:mm:ss", new Date());
+    freedomJson.editTime = util.dateFormat("yyyy-MM-dd hh:mm:ss", new Date());
 
-    fs.writeFileSync(pkgFile, JSON.stringify(pkg), {
+    freedomJson.device = moduleModel.device;
+
+    fs.writeFileSync(pkgFile, JSON.stringify(pkg, null, 2), {
       encoding: "utf-8"
     });
-    fs.writeFileSync(freedomFile, JSON.stringify(freedomJson), {
+    fs.writeFileSync(freedomFile, JSON.stringify(freedomJson, null, 2), {
       encoding: "utf-8"
     });
 
-    //修改项目index.html跟index.less
+    //修改项目index.html、index.less、index.js
     let indexHtmlFile = `${baseDir}/${moduleModel.modName}/src/index.html`;
     let indexLessFile = `${baseDir}/${moduleModel.modName}/src/index.less`;
+    let indexJsFile = `${baseDir}/${moduleModel.modName}/src/index.js`;
     let indexHtml = fs.readFileSync(indexHtmlFile);
     let indexLess = fs.readFileSync(indexLessFile);
+    let indexJs = fs.readFileSync(indexJsFile);
 
-    indexHtml = indexHtml.toString().replace(/class="freedom-module-wrapper">/gm, `class="freedom-module-wrapper-${moduleModel.type}">`);
-    indexLess = `.freedom-module-wrapper-${moduleModel.type}{}`;
+    indexJs = indexJs.toString().replace(/\${schema-data}/gm, `.schema-data-${moduleModel.modName}`);
+    indexHtml = indexHtml.toString().replace(/class="freedom-module-wrapper">/gm, `class="${moduleModel.modName}">`);
+    if (moduleModel.device == "mobile") {
+      indexLess = `@import "../libs/common.less";\r\n\r\n.freedom-module-wrapper {\r\n\t.${moduleModel.modName} {\r\n\r\n\t}\r\n}`;
+    } else {
+      indexLess = `.freedom-module-wrapper {\r\n\t.${moduleModel.modName} {\r\n\r\n\t}\r\n}`;
+    }
     fs.writeFileSync(indexHtmlFile, indexHtml, {
       encoding: "utf-8"
     });
     fs.writeFileSync(indexLessFile, indexLess, {
       encoding: "utf-8"
     });
+
+    fs.writeFileSync(indexJsFile, indexJs, {
+      encoding: "utf-8"
+    });
+
+    if (moduleModel.device != "mobile") {
+      await shell.execCmd(`rm -rf ${baseDir}/${moduleModel.modName}/libs/`, false);
+    }
 
     console.log((`${moduleModel.modName} project have generate finished......`).bold.green);
     //生成gitlab|github项目(执行shell或者调用open api)，并且push到远程

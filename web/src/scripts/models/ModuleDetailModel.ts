@@ -9,6 +9,11 @@ export class ModuleDetailModel {
 	modName: string;
 
 	/**
+	 * 模块类型，移动端:mobile pc端：pc
+	 */
+	device:string = "mobile";
+
+	/**
 	 * 模块类型 ejs、vue、react、jade、xtpl
 	 */
 	type: string;
