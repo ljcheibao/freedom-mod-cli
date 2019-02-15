@@ -61,7 +61,7 @@ class GenerateTpl {
     freedomJson.type = moduleModel.type;
     freedomJson.author = pkg.author;//创建者,这里是登录github/gitlab账号的用户
     freedomJson.editor = "上善若水";//这里是登录github/gitlab账号的用户
-    freedomJson.editTime = util.dateFormat("yyyy-MM-dd hh:mm:ss", new Date());
+    freedomJson.createTime = util.dateFormat("yyyy-MM-dd hh:mm:ss", new Date());
     freedomJson.editTime = util.dateFormat("yyyy-MM-dd hh:mm:ss", new Date());
 
     freedomJson.device = moduleModel.device;
